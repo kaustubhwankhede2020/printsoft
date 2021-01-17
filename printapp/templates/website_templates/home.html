@@ -1,0 +1,43 @@
+{% extends 'website_templates/index.html' %}
+{% load static %}
+{% block main_content %}
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'images/slide1.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/slide4.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/slide3.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </a>
+</div>
+
+<div class="container">
+    <div class="card m-5">
+        <div class="card-header">
+            Creator's Board
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">By Kwinfosys</h5>
+            <p class="card-text">We are here to help you with the amazing and modern technologies that will help us to
+                build
+                amazing applications, websites, Softwares, android apps and many more. We are also going to help you
+                with
+                Technology Consultancy and Topics related to Industry 4.0 .</p>
+            <a href="{% url 'creators_board' %}" class="btn btn-primary">Learn More</a>
+        </div>
+    </div>
+</div>
+
+{% endblock main_content %}
