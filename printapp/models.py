@@ -118,3 +118,48 @@ class PrintingConfiguration(models.Model):
     created_at = models.DateTimeField()
     updated_at = models.DateTimeField()
     objects = models.Manager()
+
+
+# Binding Models
+class BindingConfiguration(models.Model):
+    main_id = models.AutoField(primary_key=True)
+    binding_type = models.CharField(max_length=30)
+    binding_size = models.CharField(max_length=6)
+    no_of_books = models.CharField(max_length=6)
+    rates = models.CharField(max_length=6)
+    created_at = models.DateTimeField()
+    updated_at = models.DateTimeField()
+    objects = models.Manager()
+
+
+# Customer Model
+class CustomerConfiguration(models.Model):
+    main_id = models.AutoField(primary_key=True)
+    customer_name = models.CharField(max_length=20)
+    customer_contact = models.CharField(max_length=15)
+    customer_address = models.TextField()
+    created_at = models.DateTimeField()
+    updated_at = models.DateTimeField()
+    objects = models.Manager()
+
+
+# Job Model
+class JobConfiguration(models.Model):
+    main_id = models.AutoField(primary_key=True)
+    job_name = models.CharField(max_length=20)
+    job_description = models.TextField()
+    created_at = models.DateTimeField()
+    updated_at = models.DateTimeField()
+    objects = models.Manager()
+
+
+# Lamination Model
+class LaminationConfiguration(models.Model):
+    main_id = models.AutoField(primary_key=True)
+    lamination_size = models.CharField(max_length=10)
+    first_1000 = models.CharField(max_length=10)
+    next_1000 = models.CharField(max_length=10)
+    description = models.TextField()
+    created_at = models.DateTimeField()
+    updated_at = models.DateTimeField()
+    objects = models.Manager()
