@@ -15,12 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from printapp import views
+from printapp import views, admin_views, employee_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.render_home, name="home"),
     path('creators_board/', views.render_creators_board, name="creators_board"),
     path('login/', views.render_login, name="login"),
+    path('perform_login', views.perform_login, name="perform_login"),
     path('register/', views.render_register, name="register"),
+
+    # render admin templates
+    path('admin_home', admin_views.render_admin_home, name="admin_home"),
+
+    # render employee templates
+    path('employee_home', employee_views.render_employee_home, name="employee_home"),
 ]
